@@ -95,7 +95,7 @@ export function AuthForm() {
             <div className="space-y-2">
               <div className="flex items-center justify-between">
                 <Label htmlFor="password">Password</Label>
-                {mode === "signin" && <button type="button" onClick={() => changeMode("forgot")} className="text-xs text-primary hover:underline">Forgot password?</button>}
+                {mode === "signin" && <Button type="button" variant="link" size="sm" onClick={() => changeMode("forgot")} className="h-auto p-0 text-xs">Forgot password?</Button>}
               </div>
               <Input id="password" type="password" autoComplete={mode === "signin" ? "current-password" : "new-password"} minLength={8} required value={password} onChange={(event) => setPassword(event.target.value)} placeholder="At least 8 characters" className="h-11 bg-background/70" />
             </div>
@@ -112,9 +112,9 @@ export function AuthForm() {
 
         <div className="mt-6 text-center text-sm text-muted-foreground">
           {mode === "signin" ? (
-            <>New here? <button type="button" onClick={() => changeMode("signup")} className="font-medium text-foreground hover:text-primary">Create an account</button></>
+            <>New here? <Button type="button" variant="link" onClick={() => changeMode("signup")} className="h-auto p-0 font-medium text-foreground">Create an account</Button></>
           ) : (
-            <>Already have an account? <button type="button" onClick={() => changeMode("signin")} className="font-medium text-foreground hover:text-primary">Sign in</button></>
+            <>Already have an account? <Button type="button" variant="link" onClick={() => changeMode("signin")} className="h-auto p-0 font-medium text-foreground">Sign in</Button></>
           )}
         </div>
       </section>

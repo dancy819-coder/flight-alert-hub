@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
 export const Route = createFileRoute("/reset-password")({
+  ssr: false,
   head: () => ({ meta: [
     { title: "Reset password｜Flight Price Notifier" },
     { name: "description", content: "Choose a new password for your Flight Price Notifier account." },
