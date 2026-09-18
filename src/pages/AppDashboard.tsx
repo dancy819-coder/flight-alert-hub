@@ -21,7 +21,7 @@ import { usePageMeta } from "@/lib/use-page-meta";
 const API_URL = import.meta.env.VITE_FLIGHT_API_URL as string;
 
 type Plan = {
-  name: "tokyo" | "seoul";
+  name: "tokyo" | "seoul" | "london";
   label: string;
   route: string;
   hint: number;
@@ -30,6 +30,7 @@ type Plan = {
 const PLANS: Plan[] = [
   { name: "tokyo", label: "台北 ✈ 東京", route: "TPE-TYO", hint: 9325 },
   { name: "seoul", label: "台北 ✈ 首爾", route: "TPE-SEL", hint: 5989 },
+  { name: "london", label: "台北 ✈ 倫敦", route: "TPE-LON", hint: 20431 },
 ];
 
 type SubscriptionRow = {
@@ -183,7 +184,7 @@ export default function AppDashboard() {
         </p>
         <h1 className="mt-3 text-3xl font-semibold sm:text-5xl">Hi {user.email}</h1>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {isLoading ? (
             <p className="text-sm text-muted-foreground">載入訂閱狀態中…</p>
           ) : (
